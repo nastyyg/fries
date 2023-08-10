@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FM PopUp Message Uploads</title>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Popins', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right,#ff14a5f3,#f82e2e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn{
+    padding: 10px 60px;
+    background: #fff;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 40px;
+    font-weight: 500;
+    border-radius: 30px;
+}
+.popup{
+    width: 400px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color:#333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0, 2px 5px rgba(0, 0, 0, 0.2);
+}
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+.popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #439625;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0, 2px 5px rgba(0, 0, 0, 0.2);
+}
+</style>
+</head>
+<body>
+    <div class="container">
+      <button type="confirm" class="btn" onclick="openPopup()">Comfirm</button>
+    <div class="popup" id="popup">
+        <img src="images/check.png">
+        <h2>Thank You!</h2>
+        <p>Your details has been successfully confirmed. Thanks!</p>
+        <button type="button" onclick="location.href ='streamshome.html'">OK</button>
+    </div>
+    </div>
+<script>
+let popup = document.getElementById("popup");
+
+function openPopup(){
+  popup.classList.add("open-popup");
+}
+function closePopup(){
+  popup.classList.remove("open-popup");
+}
+    </script>
+</body>
+</html>

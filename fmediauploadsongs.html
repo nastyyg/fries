@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FriesMedia Uploads Subscribe </title>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: linear-gradient(to right,#ff0c0c,#0905ff);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+
+header.h2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.header{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    background: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.header :hover{
+    color: red;
+}
+
+
+.friesmedia FriesMedia Uploads{
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    user-select: none;
+}
+
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.col-1{
+    flex-basis: 50%;
+    flex-grow: 1;
+    background-image: linear-gradient(rgba(0, 17, 255, 0.8),rgba(0,0,0,0.8)),url(images/playlist/2.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: inherit;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff
+}
+.col-2{
+    flex-basis: 50%;
+    flex-grow: 1;
+    padding: 50px 80px;
+}
+
+h2{
+    color: #000000;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-top: -80px;
+}
+h2 img{
+    width: 23px;
+    margin-right: 10px;
+}
+form{
+    width: 400px;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+label{
+    display: block;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px 5px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500px;
+    color: pointer;
+}
+label span{
+    flex: 1;
+    margin-left: 15px;
+    font-size: 34px;
+    font-weight: 600;
+    color: #333;
+}
+
+label span small{
+    font-size: 18px;
+}
+input[type="radio"]:checked + span{
+    color: #ff004f;
+}
+
+input[type="text"],input[type="email"]{
+    width: 100%;
+    background: transparent;
+    padding: 7px 10px;
+    outline: none;
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin: 12px 0;
+}
+form button{
+    background: #ff004f;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 50px;
+    margin: 20px 0;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+h1{
+    color: #fff;
+}
+</style>
+</head>
+<body>
+
+    <header>
+        <h1>FriesMedia Uploads</h1>
+        <h2 class="friesmedia">FriesMedia Uploads</h2>
+        <nav class="navigation">
+ 
+            <a href="https://audiomack.com">Audiomack</a>
+            <a href="https://tunesliberia.com">Tunesliberia</a>
+            <a href="https://originalhitz.com">Originalhitz</a>
+            <a href="https:///donplyursehmp3.blogspot.com">Donplyursehmp3</a>
+        </nav>
+    </header>
+
+<div class="container">
+    <div class="col-1">
+        <img src="fmlogo.JPG" class="logo" style="width: 200px;">
+        <ul>
+            <li>Unlimited musics and videos.</li><br>
+            <li> Stream musics anytime.</li><br>
+            <li> Unlimited uploads of musics and videos.</li><br>
+            <li> Download musics and play offline.</li><br>
+            <li> A social media platform to blog your talent and others uses.</li><br>
+            <li> Unlimited uploads of others entertianment.</li><br>
+
+        </ul>
+
+    </div>
+    <div class="col-2">
+
+        <h2><img src="fmlogo.JPG"style="width:30px"> Our Plans</h2>
+        <form>
+            <label for="free">
+                <input type="radio" name="plans" id="free"  onclick="location.href ='fmediauploadsongsfree.html'">
+                <span>FREE</span> ONE MONTH
+            </label>
+            <label for="paid">
+                <input type="radio" name="plans" id="paid"  onclick="location.href ='paymentsubscribe.html'">
+                <span>$3 <small>/month</small></span> NO LIMITS
+            </label> 
+            <br>
+            <p>CHOOSE ANY ONE!!!</p>
+        </form>
+    </div>
+</div>   
+</body>
+</html>

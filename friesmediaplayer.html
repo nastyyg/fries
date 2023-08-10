@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+        nomodule
+        src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <title>FriesMedia Music Player</title>
+<style>
+:root {
+    --primary-color: #e9000c;
+    --secondary-color: #a1a1a1;
+    --light-color: #eeeeee;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+.btn{
+    width: 50px;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+    background-color: transparent;
+}
+.container {
+    width: 400px;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.container .player {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container nav {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+nav .logo{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.progress-cont{
+    position: relative;
+    margin-bottom: 30px;
+}
+#progress{
+    width: 300px;
+    height: 300px;
+    transform: rotate(-90deg);
+}
+#progress circle {
+    stroke: var(--light-color);
+    stroke-width: 5px;
+    stroke-linecap: round;
+    stroke-dashoffset: 879.646;
+    transition: stroke-dashoffset 0.1s linear;
+}
+#progress #bar {
+    stroke: var(--primary-color);
+}
+.progress-cont #cover {
+    position: absolute;
+    top: 06.8%;
+    left: 50%;
+    width: 85%;
+    height: 86%;
+    border-radius: 50%;
+    object-fit: cover;
+    transform: translate(-50%);
+    box-shadow: 0 0 10px 0 rgba(0 , 0,0 ,0.2), 0 10px 40px 0 rgba(0 , 0,0 ,0.2);
+}
+.progress-cont #cover.playing {
+    animation: rotate 10s linear infinite;
+}
+@keyframes rotate {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+.player .time{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    font-size: 12px;
+    color: var(--secondary-color);
+}
+.player .info{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 50px;
+}
+.player .info h1{
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+.player .info h2{
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+.player .controls{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 50px;
+}
+.player .controls .center-btns {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid var(--light-color);
+    border-radius: 50px;
+}
+.player .controls .center-btns #play{
+    width: 80px;
+    height: 80px;
+    color: #fff;
+    font-size: 35px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+.player .playlist-covers .cover{
+    position: absolute;
+    left: 50%;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateX(-50%) translateY(100%);
+}
+.player .playlist-covers.active .cover {
+    transform: translateX(-50%) translateY(0);
+}
+.player .playlist-covers .cover:nth-child(1){
+    width: 70%;
+    top: 40px;
+    z-index: 3;
+}
+.player .playlist-covers .cover:nth-child(2){
+    width: 50%;
+    top: 20px;
+    z-index: 2;
+}
+.player .playlist-covers .cover:nth-child(3){
+    width: 30%;
+    top: 0;
+    z-index: 1;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="player">
+      <nav>
+        <button class="btn">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </button>
+        <h1 class="logo">FriesMedia Player</h1>
+        <button class="btn">  
+          <ion-icon name="ellipsis-vertical"></ion-icon>
+        </button>
+      </nav>
+      <div class="progress-cont">
+        <svg
+          id="progress"
+          viewPort="0 0 100 100"
+          version="1.1"
+          xmlns="http://www.w3.org/200/svg"
+        >
+            <circle r="140" cx="150" cy="150" fill="transparent"></circle>
+            <circle
+             id="bar"
+             r="140"
+             cx="150"
+             cy="150"
+             fill="transparent"
+             stroke-dasharray="879.646"
+            ></circle>
+          </svg>
+          <img src="3.jpg" alt="" id="cover" />
+      </div>
+      <div class="time">
+        <span id="current-time">00:00</span>
+        <span id="duration">00:00</span>
+      </div>
+      <div class="info">
+         <h1 id="title">Title</h1>
+         <h2 id="artist">Artist</h2>
+      </div>
+      <div class="controls">
+      <button class="btn" id="shuffle">
+        <ion-icon name="shuffle"></ion-icon>
+        </button>
+        <div class="center-btns">
+          <button class="btn" id="prev">
+            <ion-icon name="play-skip-back"></ion-icon>
+          </button>
+          <button class="btn" id="play">
+            <ion-icon name="play"></ion-icon>
+         </button>
+         <button class="btn" id="next">
+            <ion-icon name="play-skip-forward"></ion-icon>
+         </button>
+        </div>
+        <button class="btn active" id="repeat" class="active">
+            <ion-icon name="repeat"></ion-icon>
+         </button>
+      </div>
+      <div class="playlist-covers active">
+        <div class="cover">
+          <img src="2.jpg" alt="" />
+        </div>
+        <div class="cover">
+            <img src="1.jpg" alt="" />
+        </div>
+        <div class="cover">
+            <img src="13.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    
+  </script>
+</body>
+</html>
