@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FriesPlay</title>
+    <style>
+        /* styles.css */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #1db954;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #181818;
+    padding: 20px;
+    display: none; /* Hide sidebar on small screens */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    color: #1db954;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.playlist {
+    display: inline-block;
+    width: 150px;
+    margin: 10px;
+    text-align: center;
+}
+
+.playlist img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #181818;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#playBtn {
+    background-color: #1db954;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#playBtn:hover {
+    background-color: #1ed760;
+}
+
+/* Responsive Styles */
+@media (min-width: 600px) {
+    .sidebar {
+        display: block; /* Show sidebar on larger screens */
+    }
+
+    .content {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .playlist {
+        width: 100%; /* Full width on small screens */
+    }
+}
+    </style>
+  
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FriesMp3</h1>
+        </header>
+        <main>
+            <div class="sidebar">
+                <ul>
+                    <li>Home</li>
+                    <li>Search</li>
+                    <li>Your Library</li>
+                </ul>
+            </div>
+            <div class="content">
+                <h2>Featured Playlists</h2>
+                <div class="playlist">
+                    <img src="images/16.jpg" alt="Playlist 1">
+                    <h3>Chill Vibes</h3>
+                </div>
+                <div class="playlist">
+                    <img src="images/naslib.PNG" alt="Playlist 2">
+                    <h3>Top Hits</h3>
+                </div>
+                <div class="playlist">
+                    <img src="images/" alt="Playlist 3">
+                    <h3>Workout Mix</h3>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <p>Now Playing: Chill Vibes</p>
+                <button id="playBtn">Play</button>
+            </div>
+        </footer>
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>
